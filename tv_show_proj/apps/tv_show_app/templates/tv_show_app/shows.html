@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shows</title>
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'tv_show_app/css/shows_style.css'%}">
+</head>
+    <body>
+        <div class="wrapper">
+            <h1>All Shows</h1>
+            <table class="tbld">
+                <tr class="tbld">
+                    <th class="tbld">ID</th>
+                    <th class="tbld">Title</th>
+                    <th class="tbld">Network</th>
+                    <th class="tbld">Release Date</th>
+                    <th class="tbld">Actions</th>
+                </tr>
+                    {%for s in show%}
+                <tr class="tbld">
+                    <td>{{s.id}}</td>
+                    <td>{{s.title}}</td>
+                    <td>{{s.network}}</td>
+                    <td>{{s.release_date}}</td>
+                    <td><a href="/shows/{{s.id}}">Show |</a><a href="/shows/{{s.id}}/edit">Edit |</a><a href="/shows/{{s.id}}/delete">Delete</a></td>
+                </tr>
+                    {% endfor %}
+            </table>
+            <a href="/shows/new">Add a new show</a>
+        </div>
+    </body>
+</html>

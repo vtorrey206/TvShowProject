@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Show</title>
+</head>
+<body>
+        <div class="wrapper">
+                    {% if messages %}
+                    <ul class="messages">    
+                        {% for message in messages %}    
+                            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                <form method="POST" action="/shows/{{show.id}}/update">
+                    <h6>Title:</h6><br>
+                    <input type="text" name="title">
+                    <h6>Network:</h6><br>
+                    <input type="text" name="network">
+                    <h6>Release Date:</h6><br>
+                    <input type="date" name="release_date">
+                    <h6>Description:</h6><br>
+                    <textarea rows="10" cols="100" name="desc"></textarea><br>
+                    <input class="button" type="submit" value="Update">
+                    {%csrf_token%}
+                </form>
+                <a href="/shows/new">Go to show</a>
+            </div>
+</body>
+</html>

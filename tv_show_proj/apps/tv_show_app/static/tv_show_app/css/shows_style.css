@@ -1,0 +1,30 @@
+/* Table design = tbld */
+/* show.html */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.wrapper{
+    height: 1500px;
+    width: 970px;
+    background-color: #C3C7C8;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    margin: auto;
+}
+.wrapper h1{
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 900;
+    text-decoration: underline;
+}
+.tbld table, th, td{
+    border: 3px solid #021156;
+    border-collapse: collapse;
+    width: 960px;
+    height: 65px;
+    text-align:center;
+}
+.tbld th{
+    text-decoration: underline;
+}
+/* new.html */
